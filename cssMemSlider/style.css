@@ -1,0 +1,244 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: darkgray;
+}
+.main {
+    width: 100%;
+    padding-top: 40px;
+    background-color: darkgray;
+}
+
+#slider {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#slides article {
+    width: 200%;
+    float: left;
+}
+
+#slides .image {
+    display: flex;
+    width: 50%;
+    line-height: 0;
+}
+
+#overflow {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+img {
+    width: 1000px;
+    height: 100%;
+}
+
+#desctop:checked ~ #slider {
+    max-width: 85rem;
+}
+
+label, a {
+    cursor: pointer;
+}
+
+.main input {
+    display: none;
+}
+
+#switch1:checked ~ #slides .image {
+    margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image {
+    margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image {
+    margin-left: -200%;
+}
+
+#switch4:checked ~ #slides .image {
+    margin-left: -300%;
+}
+
+#controls {  
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 50px;
+}
+
+#active label { 
+    border-radius: 10px;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-color: lightslategray;
+    background-color: white;
+    transition: 0.3s;
+
+}
+
+#active label:not(:last-child) {
+    margin-right: 10px;
+}
+
+#active {
+    width: 30%;
+    margin: 0.5% 0 0 0;
+    text-align: right;
+    z-index: 5;
+}
+    
+#switch1:checked ~ .footer #active label:nth-child(1),
+#switch2:checked ~ .footer #active label:nth-child(2),
+#switch3:checked ~ .footer #active label:nth-child(3),
+#switch4:checked ~ .footer #active label:nth-child(4){
+    border: 3px solid;
+    background-color: orange;
+    border-color: orange ;
+    transition: 0.3s;
+}
+
+.footer #active label:hover {
+    border: 3px solid;
+    border-color: orange ;
+    background-color: white;
+    transition: 0.3s;
+}
+
+#switch1:checked ~ #active label:nth-child(1),
+#switch2:checked ~ #active label:nth-child(2),
+#switch3:checked ~ #active label:nth-child(3),
+#switch4:checked ~ #active label:nth-child(4){
+    border: 3px solid;
+    background-color: orange;
+    border-color: orange ;
+    transition: 0.3s;
+}
+
+#active label:hover {
+    border: 3px solid;
+    border-color: orange ;
+    background-color: white;
+    transition: 0.3s;
+}
+#slides .image {
+    transition: all 1s  ;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4%;
+}
+
+#text__box {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+#text__box span {
+    font-size: 30px;
+    font-weight: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 30px;
+    letter-spacing: 4px;
+    margin-left: 5px;
+}
+
+#text__box .texts {
+    display: flex;
+    width: 100%;
+}
+
+#text__box .text {
+    min-width: 100%;
+    text-align: left;
+}
+
+#text__box .text div {
+    width: 200%;
+    float: left;
+}
+#switch1:checked ~ .footer #text__box .texts {
+    margin-left: 0;
+}
+#switch2:checked ~ .footer #text__box .texts {
+    margin-left: -100%;
+}
+#switch3:checked ~ .footer #text__box .texts {
+    margin-left: -200%;
+}
+#switch4:checked ~ .footer #text__box .texts {
+    margin-left: -300%;
+}
+#text__box .texts { 
+    transition: all 1s;
+}
+.switch_center{
+  opacity: 0;
+
+}
+@media (max-width:1050px) {
+    #slider {
+        width: 700px;
+    }
+    img {
+        width: 700px;
+    }
+    .switch_center{
+        padding-top: 10px;
+        margin: 0 auto;
+        padding-left: calc((100% - 270px) / 2);
+        opacity: 1;
+      }
+    .swith_right{
+        opacity: 0;
+    }
+    #text__box {
+        height: 70px;
+}
+@media (max-width:750px) {
+  
+    #slider {
+        width: 450px;
+    }
+    img {
+        width: 450px;
+    }
+    #text__box span {
+        font-size: 18px;
+    }
+    #active label:not(:last-child) {
+        margin-right: 5px;
+    }
+    .switch_center{
+        padding-left: calc((100% - 135px) / 2);
+    }
+}
+@media (max-width:460px) {
+    #slider {
+        width: 300px;
+    }
+    img {
+        width: 300px;
+    }
+    #text__box span {
+        font-size: 12px;
+    }
+    #active label:not(:last-child) {
+        margin-right: 3px;
+    }
+    #active label { 
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+    .switch_center{
+        padding-left: calc((100% - 115px) / 2);
+    }
+}
